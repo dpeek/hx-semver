@@ -10,25 +10,6 @@ hx-semver -- A Haxe port of the node semantic versioner
     SemVer.gt('1.2.3', '9.8.7') // false
     SemVer.lt('1.2.3', '9.8.7') // true
 
-As a command-line utility:
-
-    $ SemVer -h
-
-    Usage: SemVer -v <version> [-r <range>]
-    Test if version(s) satisfy the supplied range(s),
-    and sort them.
-
-    Multiple versions or ranges may be supplied.
-
-    Program exits successfully if any valid version satisfies
-    all supplied ranges, and prints all satisfying versions.
-
-    If no versions are valid, or ranges are not satisfied,
-    then exits failure.
-
-    Versions are printed in ascending order, so supplying
-    multiple versions to the utility will just sort them.
-
 ## Versions
 
 A version is the following things, in this order:
