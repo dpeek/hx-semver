@@ -1,7 +1,17 @@
+package semver;
+
+import massive.munit.Assert;
 using semver.SemVer;
 
-class Main
+/**
+@author david.peek
+*/
+class SemVerTest
 {
+	public function new() {}
+
+	//-------------------------------------------------------------------------- suites
+
 	static var equalities = 
 	[ ["0.0.0", "0.0.0foo"]
 	, ["0.0.1", "0.0.0"]
@@ -322,32 +332,40 @@ class Main
 	, ["< 1.2", [["<1.2.0-"]] ]
 	, ["1", [[">=1.0.0-", "<2.0.0-"]]]];
 
-	public static function main()
+	//-------------------------------------------------------------------------- helpers
+
+	function ok(expr:Bool, msg:String)
 	{
-		function ok(expr:Bool, msg:String)
+		if (!expr)
 		{
-			if (!expr) trace(msg);
+			Assert.fail(msg);
 		}
+	}
 
-		function equivalent(array1:Dynamic, array2:Dynamic)
+	function equivalent(array1:Dynamic, array2:Dynamic)
+	{
+		if (array1.length != array2.length) return false;
+
+		for (i in 0...array1.length)
 		{
-			if (array1.length != array2.length) return false;
-
-			for (i in 0...array1.length)
+			if (Std.is(array1[i], Array))
 			{
-				if (Std.is(array1[i], Array))
-				{
-					if (!equivalent(array1[i], array2[i])) return false;
-				}
-				else
-				{
-					if (array1[i] != array2[i]) return false;
-				}
+				if (!equivalent(array1[i], array2[i])) return false;
 			}
-
-			return true;
+			else
+			{
+				if (array1[i] != array2[i]) return false;
+			}
 		}
 
+		return true;
+	}
+
+	//-------------------------------------------------------------------------- tests
+
+	@Test
+	public function satisfies_equalities()
+	{
 		for (test in equalities)
 		{
 			var v0 = test[0];
@@ -366,7 +384,11 @@ class Main
 			ok(v1.cmp("<=", v0), "cmp('" + v1 + "', '<=', '" + v0 + "')");
 			ok(v0.cmp("!=", v1), "cmp('" + v0 + "', '!=', '" + v1 + "')");
 		}
+	}
 
+	@Test
+	public function satisfies_inequalities()
+	{
 		for (test in nequalities)
 		{
 			var v0 = test[0];
@@ -383,32 +405,56 @@ class Main
 			ok(!v0.lt(v1), "!lt('"+v0+"', '"+v1+"')");
 			ok(v0.lte(v1), "lte('"+v0+"', '"+v1+"')");
 		}
-		
+	}
+
+	@Test
+	public function satisfies_ranges()
+	{
 		for (test in ranges)
 		{
 			ok(SemVer.satisfies(test[1], test[0]), test[0]+" satisfied by "+test[1]);
 		}
+	}
 
+	@Test
+	public function satisfies_negated_ranges()
+	{
 		for (test in nranges)
 		{
 			ok(!SemVer.satisfies(test[1], test[0]), test[0]+" not satisfied by "+test[1]);
 		}
+	}
 
+	@Test
+	public function increments_version()
+	{
 		for (test in increments)
 		{
 			ok(SemVer.inc(test[0], test[1]) == test[2], "inc("+test[0]+", "+test[1]+") == "+test[2]);
 		}
+	}
 
+	@Test
+	public function replaces_stars()
+	{
 		for (test in stars)
 		{
 			ok(SemVer.replaceStars(test[0]) == test[1], "replaceStars("+test[0]+") == "+test[1]);
 		}
+	}
 
+	@Test
+	public function validates_ranges()
+	{
 		for (test in validRanges)
 		{
 			ok(SemVer.validRange(test[0]) == test[1], "validRange("+test[0]+") == "+test[1]);
 		}
+	}
 
+	@Test
+	public function converts_comparators()
+	{
 		for (test in comparators)
 		{
 			ok(equivalent(SemVer.toComparators(test[0]), test[1]), "toComparators("+test[0]+") == "+test[1]);
