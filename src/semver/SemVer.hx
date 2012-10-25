@@ -228,7 +228,7 @@ class SemVer
 	}
 
 	// returns the highest satisfying version in the list, or undefined
-	static function maxSatisfying(versions:Array<String>, range:String):String
+	public static function maxSatisfying(versions:Array<String>, range:String):String
 	{
 		versions =  versions
 			.filter(function(v) { return satisfies(v, range); })
