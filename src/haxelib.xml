@@ -1,5 +1,7 @@
-<project name="semver" url="http://lib.haxe.org/p/semver" license="MIT">
-	<user name="massive"/>
-	<description><![CDATA[Library description.]]></description>
+<project name="semver" url="http://github.com/DavidPeek/hx-semver" license="MIT">
+	<user name="ninjascript"/>
+	<description><![CDATA[A Haxe port of the Node SemVer library.]]></description>
 	<version name="1.0.0"><![CDATA[Initial release.]]></version>
+	<tag v="cross"/>
+	<tag v="utility"/>
 </project>

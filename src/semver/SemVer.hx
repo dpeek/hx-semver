@@ -330,7 +330,7 @@ class SemVer
 		return v == null ? -1 : Std.parseInt(~/[^0-9]+/g.replace(v, ""));
 	}
 
-	public static function gt(version1:String, version2:String):Bool
+	public static function gt(version1:String, version2:String):Null<Bool>
 	{
 		var v1 = parseString(version1);
 		var v2 = parseString(version2);

@@ -1,5 +1,6 @@
 {
 	"name":"hx-semver",
 	"version":"1.0.0",
-	"id":"semver"
+	"id":"semver",
+	"dependencies":{}
 }

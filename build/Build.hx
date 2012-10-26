@@ -9,14 +9,28 @@ class Build extends mtask.core.BuildBase
 
 	@target function haxelib(t:HaxeLib)
 	{
+		t.url = "http://github.com/DavidPeek/hx-semver";
+		t.description = "A Haxe port of the Node SemVer library.";
+		t.versionDescription = "Initial release.";
+
+		t.addTag("cross");
+		t.addTag("utility");
+
 		t.beforeCompile = function(path)
 		{
 			cp("src/*", path);
 		}
 	}
 
-	@task function sublime()
+	@task function test()
 	{
-		invoke("run main.n");
+		cmd("haxelib", ["run", "munit", "test", "-coverage"]);
+	}
+
+	@task function teamcity()
+	{
+		invoke("test");
+		cmd("haxelib", ["run", "munit", "report", "teamcity"]);
+		invoke("build haxelib");
 	}
 }
