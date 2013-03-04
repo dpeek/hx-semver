@@ -38,7 +38,7 @@ class SemVer
 	public static var parseSpermy = new EReg("^"+exprSpermy+"$", "");
 	public static var rangeReplace = ">=$1 <=$7";
 
-	static function parseString(version:String):Array<String>
+	public static function parseString(version:String):Array<String>
 	{
 		var match = parse.match(version);
 		if (!match) return null;
