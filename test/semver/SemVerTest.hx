@@ -12,7 +12,7 @@ class SemVerTest
 
 	//-------------------------------------------------------------------------- suites
 
-	static var equalities = 
+	static var equalities:Array<Dynamic> = 
 	[ ["0.0.0", "0.0.0foo"]
 	, ["0.0.1", "0.0.0"]
 	, ["1.0.0", "0.9.9"]
@@ -39,7 +39,7 @@ class SemVerTest
 	, ["1.2.3-5-foo", "1.2.3-5-Foo"]
 	, ["3.0.0", "2.7.2+"]];
 
-	static var nequalities =
+	static var nequalities:Array<Dynamic> =
 	[ ["1.2.3", "v1.2.3"]
 	, ["1.2.3", "=1.2.3"]
 	, ["1.2.3", "v 1.2.3"]
@@ -73,7 +73,7 @@ class SemVerTest
 	, ["1.2.3beta", " v 1.2.3beta"]
 	, ["1.2.3beta", " = 1.2.3beta"]];
 
-	static var ranges =
+	static var ranges:Array<Dynamic> =
 	[ ["1.0.0 - 2.0.0", "1.2.3"]
 	, ["1.0.0", "1.0.0"]
 	, [">=*", "0.2.4"]
@@ -140,7 +140,7 @@ class SemVerTest
 	, [">=0.7.x", "0.7.0-asdf"]
 	, ["<=0.7.x", "0.6.2"]];
 
-	static var nranges =
+	static var nranges:Array<Dynamic> =
 	[ ["1.0.0 - 2.0.0", "2.2.3"]
 	, ["1.0.0", "1.0.1"]
 	, [">=1.0.0", "0.0.0"]
@@ -187,7 +187,7 @@ class SemVerTest
 	, [">=0.7.x", "0.6.2"]
 	, ["<=0.7.x", "0.7.2"]];
 
-	static var increments =
+	static var increments:Array<Dynamic> =
 	[ [ "1.2.3",		Major, "2.0.0"   ]
 	, [ "1.2.3",		Minor, "1.3.0"   ]
 	, [ "1.2.3",		Patch, "1.2.4"   ]
@@ -201,7 +201,7 @@ class SemVerTest
 	, [ "1.2.3-4tag",	Build, "1.2.3-5" ]
 	, [ "fake",			Major, null ]];
 
-	static var stars =
+	static var stars:Array<Dynamic> =
 	[ [ "", "" ]
 	, [ "*", "" ]
 	, [ "> *", "" ]
@@ -209,7 +209,7 @@ class SemVerTest
 	, [ " >=  *", "" ]
 	, [ "* || 1.2.3", " || 1.2.3" ]];
 
-	static var validRanges =
+	static var validRanges:Array<Dynamic> =
 	[ ["1.0.0 - 2.0.0", ">=1.0.0 <=2.0.0"]
 	, ["1.0.0", "1.0.0"]
 	, [">=*", ""]
@@ -269,7 +269,7 @@ class SemVerTest
 	, ["< 1.2", "<1.2.0-"]
 	, ["1", ">=1.0.0- <2.0.0-"]];
 
-	static var comparators =
+	static var comparators:Array<Dynamic> =
 	[ ["1.0.0 - 2.0.0", [[">=1.0.0", "<=2.0.0"]] ]
 	, ["1.0.0", [["1.0.0"]] ]
 	, [">=*", [[">=0.0.0-"]] ]
@@ -334,11 +334,11 @@ class SemVerTest
 
 	//-------------------------------------------------------------------------- helpers
 
-	function ok(expr:Bool, msg:String)
+	function ok(expr:Bool, msg:Dynamic)
 	{
 		if (!expr)
 		{
-			Assert.fail(msg);
+			Assert.fail(Std.string(msg));
 		}
 	}
 
@@ -368,8 +368,8 @@ class SemVerTest
 	{
 		for (test in equalities)
 		{
-			var v0 = test[0];
-			var v1 = test[1];
+			var v0:String = test[0];
+			var v1:String = test[1];
 
 			ok(v0.gt(v1), "gt('" + v0 + "', '" + v1 + "')");
 			ok(v1.lt(v0), "lt('" + v1 + "', '" + v0 + "')");
@@ -391,8 +391,8 @@ class SemVerTest
 	{
 		for (test in nequalities)
 		{
-			var v0 = test[0];
-			var v1 = test[1];
+			var v0:String = test[0];
+			var v1:String = test[1];
 
 			ok(v0.eq(v1), "eq('"+v0+"', '"+v1+"')");
 			ok(!v0.neq(v1), "!neq('"+v0+"', '"+v1+"')");

@@ -7,8 +7,8 @@
 		"dependencies":
 		{
 			"munit":"feature/haxe-3",
-			"mtask":"feature/haxe-3",
-			"msys":"feature/haxe-3"
+			"mtask":"haxe3",
+			"msys":"haxe3"
 		}
 	}
 }
