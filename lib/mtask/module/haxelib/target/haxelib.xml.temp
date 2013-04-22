@@ -1,5 +1,0 @@
-<project name="${name}" url="${url}" license="${license}">
-	<user name="${username}"/>
-	<description><![CDATA[${description}]]></description>
-	<version name="${version}"><![CDATA[${versionDescription}]]></version>${block}
-</project>

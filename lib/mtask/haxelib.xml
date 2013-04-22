@@ -1,8 +1,0 @@
-<project name="mtask" url="http://github.com/massiveinteractive/mtask" license="MIT">
-	<user name="default.user"/>
-	<description><![CDATA[A build tool written in Haxe.]]></description>
-	<version name="1.4.3"><![CDATA[Updated dependencies. Tilde dependencies didn't do what I thought they did.]]></version>
-	<depends name="mtwin"/>
-	<depends name="msys"/>
-	<depends name="mconsole"/>
-</project>
