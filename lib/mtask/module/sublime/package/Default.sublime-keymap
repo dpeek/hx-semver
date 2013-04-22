@@ -1,0 +1,36 @@
+[
+	{ "keys": ["super+shift+."], "command": "massive_task" },
+	{ "keys": ["super+shift+b"], "command": "build", "args": {"variant": "Test"} },
+	{ "keys": ["super+."], "command": "exec_mtask" },
+	{ "keys": ["."], "command": "haxe_complete", "args": { "insert": ".", "prefix": "." }, "context":
+		[
+			{ "key": "selector", "operator": "equal", "operand": "source.hx" },
+			{ "key": "selector", "operator": "not_equal", "operand": "string" },
+			{ "key": "selector", "operator": "not_equal", "operand": "comment"}
+		]
+	},
+	{ "keys": [" "], "command": "haxe_complete", "args": { "insert": " ", "prefix": "new" }, "context":
+		[
+			{ "key": "preceding_text", "operator": "regex_contains", "operand": "new$", "match_all": true },
+			{ "key": "selector", "operator": "equal", "operand": "source.hx" },
+			{ "key": "selector", "operator": "not_equal", "operand": "string" },
+			{ "key": "selector", "operator": "not_equal", "operand": "comment"}
+		]
+	},
+	{ "keys": [":"], "command": "haxe_complete", "args": { "insert": ":", "prefix": ":" }, "context":
+		[
+			{ "key": "selector", "operator": "equal", "operand": "source.hx" },
+			{ "key": "selector", "operator": "not_equal", "operand": "string" },
+			{ "key": "selector", "operator": "not_equal", "operand": "comment"}
+		]
+	},
+	{ "keys": ["enter"], "command": "haxe_import", "context":
+		[
+			{ "key": "auto_complete_visible", "operator": "equal", "operand": true }, 
+			{ "key": "selector", "operator": "equal", "operand": "source.hx" },
+			{ "key": "selector", "operator": "not_equal", "operand": "string" },
+			{ "key": "selector", "operator": "not_equal", "operand": "comment"}
+		]
+	},
+	{ "keys": ["f4"], "command": "goto_definition" }
+]

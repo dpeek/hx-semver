@@ -1,0 +1,11 @@
+{
+	"name": "MassiveTask",
+	"version": "1.4.3",
+	"id": "mtask",
+	"dependencies": 
+	{
+		"msys": "feature/haxe-3",
+		"mconsole": "feature/haxe-3",
+		"mcore": "feature/haxe-3"
+	}
+}

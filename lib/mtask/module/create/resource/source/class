@@ -1,0 +1,7 @@
+${licenseBlock}${packageBlock}${docBlock}class ${typeName}
+{
+	public function new()
+	{
+		// do stuff
+	}
+}

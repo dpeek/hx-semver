@@ -1,0 +1,26 @@
+${licenseBlock}${packageBlock}import massive.munit.Assert;
+
+${docBlock}class ${typeName}
+{
+	public function new() {}
+
+	var instance:${forTypeName};
+
+	@Before
+	public function setup() 
+	{
+		instance = new ${forTypeName}();
+	}
+	
+	@After
+	public function tearDown() 
+	{
+		instance = null;
+	}
+	
+	@Test
+	public function should_create_instance()
+	{
+		Assert.isNotNull(instance);
+	}
+}

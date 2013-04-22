@@ -1,6 +1,14 @@
 {
-	"name":"hx-semver",
-	"version":"1.0.0",
-	"id":"semver",
-	"dependencies":{}
+	"project":
+	{
+		"name":"hx-semver",
+		"version":"1.0.0",
+		"id":"semver",
+		"dependencies":
+		{
+			"munit":"feature/haxe-3",
+			"mtask":"feature/haxe-3",
+			"msys":"feature/haxe-3"
+		}
+	}
 }

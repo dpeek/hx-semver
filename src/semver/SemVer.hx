@@ -133,7 +133,7 @@ class SemVer
 	static function replaceXRange(version:String):String
 	{
 		version = version.trim();
-		version = parseXRange.customReplace(version, function(ereg:EReg):String
+		version = parseXRange.map(version, function(ereg:EReg):String
 		{
 			var v = ereg.matched(0);
 			var gtlt = ereg.matched(1);
@@ -186,7 +186,7 @@ class SemVer
 	static function replaceSpermies(version:String):String
 	{
 		version = version.trim();
-		version = parseSpermy.customReplace(version, function(ereg:EReg):String
+		version = parseSpermy.map(version, function(ereg:EReg):String
 		{
 			var v = ereg.matched(0);
 			var gtlt = ereg.matched(1);
@@ -322,6 +322,7 @@ class SemVer
 			case "!=": neq(v1, v2);
 			case "===": v1 == v2;
 			case "!==": v1 != v2;
+			case _: false;
 		}
 	}
 

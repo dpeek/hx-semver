@@ -1,0 +1,20 @@
+## Flash 9+
+-main TestMain
+-lib munit
+-lib hamcrest
+-lib mconsole
+-cp src
+-cp test
+-swf-version 9
+-swf bin/test/as3_test.swf
+
+--next
+
+## JavaScript
+-main TestMain
+-lib munit
+-lib hamcrest
+-lib mconsole
+-cp src
+-cp test
+-js bin/test/js_test.js

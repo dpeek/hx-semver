@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>hxml</string>
+	</array>
+	<key>name</key>
+	<string>hxml</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>match</key>
+			<string>(-cpp?|-js|-as3|-swf-header|-swf-version|swf-lib|-swf9|-swf|-neko|-php|-xml|-x|-main|-lib|-D|-resource|-exclude|-v|-debug|-prompt|-cmd|--flash-strict|--no-traces|--flash-use-stage|--neko-source|--gen-hx-classes|--next|--display|--no-output|--times|--no-inline|--no-opt|--php-front|--remap|-help|--help|--macro|--js-modern)</string>
+			<key>name</key>
+			<string>keyword.other.hxml</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.comment.actionscript</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(#).*$\n?</string>
+			<key>name</key>
+			<string>comment.line.number-sign.hxml</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>source.hxml</string>
+	<key>uuid</key>
+	<string>DA9AA267-9AA7-49C4-B69B-EE9F6BB2BE06</string>
+</dict>
+</plist>

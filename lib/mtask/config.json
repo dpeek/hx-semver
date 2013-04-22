@@ -1,0 +1,16 @@
+{
+	"user":
+	{
+		"name": "default.user",
+		"organization": "Default Organization"
+	},
+	"haxelib":
+	{
+		"user": "default.user"
+	},
+	"localhost":
+	{
+		"url": "http://localhost/",
+		"root": ""
+	}
+}

@@ -1,0 +1,7 @@
+${licenseBlock}${packageBlock}${docBlock}class ${typeName}
+{
+	public static function main()
+	{
+		// do stuff
+	}
+}

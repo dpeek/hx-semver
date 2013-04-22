@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/tr/html4/loose.dtd">
+<html>
+	<head>
+		::raw build.comment::
+		<title>All Types ::raw config.title::</title>
+		<meta name="date" content="::webmeta.date::" />
+		::foreach kw webmeta.keywords::
+		<meta name="keywords" content="::kw::" />
+		::end::
+		<link rel="stylesheet" type="text/css" href="::webmeta.stylesheet::" />
+	<script type="text/javascript">
+
+function windowTitle()
+{
+	var title = "::name:: (::raw config.title::)";
+	var path = "all_classes::config.htmlFileExtension::";
+	onPageLoad(title, path);
+}
+
+</script>
+<noscript></noscript>
+	</head>
+	<body onload="windowTitle();">
+		<script language="javascript" type="text/javascript" src="chxdoc.js"></script>
+
+		<a name="package-top"></a>
+		<div id="types-frame" class="type-frame">
+			::set packageHrefRoot=""::
+
+			$$createPackageTypes(::config.allTypes::)
+			$$createPackageTypeDropdown(::name::)
+			
+			<div class="type-header">
+				<h1>All Types</h1>
+			</div>
+
+			<div class="package-contents">
+				This is an index page containing all documented types.
+				<br/><br/>
+				$$createPackageGroups(::config.allTypes::, true)
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,13 @@
+{
+	"cmd": ["haxelib", "run", "mtask", "sublime"],
+	"selector": "source.hx,text.xml",
+	"target": "exec_mtask",
+	"file_regex": "([a-zA-Z0-9/]+\\.hx):([0-9]+): (?:characters ([0-9]+)\\-[0-9]+|lines [0-9]+\\-[0-9]+) : (.+)$",
+	"variants":
+	[
+		{
+		  "cmd": ["haxelib", "run", "mtask", "test"],
+          "name": "Test"
+        }
+	]
+}

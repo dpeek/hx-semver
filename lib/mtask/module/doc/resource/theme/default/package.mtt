@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/tr/html4/loose.dtd">
+<html>
+	<head>
+		::raw build.comment::
+		<title>Package ::name:: Type List</title>
+		<meta name="date" content="::webmeta.date::" />
+		::foreach kw webmeta.keywords::
+		<meta name="keywords" content="::kw::" />
+		::end::
+		<link rel="stylesheet" type="text/css" href="::webmeta.stylesheet::" />
+<script type="text/javascript">
+
+function windowTitle()
+{
+	var title = "::name:: (::raw config.title::)";
+	var path = "::packageUri::";
+	onPageLoad(title, path);
+}
+
+</script>
+<noscript></noscript>
+	</head>
+	<body onload="windowTitle();">
+		<script language="javascript" type="text/javascript" src="::rootRelative::../chxdoc.js"></script>
+		<div id="types-frame" class="type-frame onepackage" >
+
+			::if full=="root types"::
+				::set packageName="Root"::
+			::else::
+				::set packageName=full::
+			::end::
+
+			::set packageHrefRoot=rootRelative + "../"::
+
+			$$createPackageTypes(::config.allTypes::)
+			$$createPackageTypeDropdown(::name::)
+			
+			<div class="type-header">
+				package
+				<h1>::full::</h1>
+				<a class="diagram overview" href="::packageHrefRoot::uml/::packageName::.html" title="::full::" target="classFrame">Class Diagram</a>
+			</div>
+
+
+			<div class="package-contents">
+				Contains all types within the <b>::packageName::</b> package.
+				<br/><br/>
+				$$createPackageGroups(::types::, false)
+			</div>
+
+		</div>
+	</body>
+</html>

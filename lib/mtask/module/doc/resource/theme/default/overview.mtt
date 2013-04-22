@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/tr/html4/frameset.dtd">
+<html>
+	<head>
+		<title>::raw config.title::</title>
+		<link rel="stylesheet" type="text/css" href="::webmeta.stylesheet::" />
+		<script type="text/javascript">
+		function redirectContents()
+		{
+			if (top.location.hash.length > 1) self.location = top.location.hash.substring(1);
+		}
+</script>
+<noscript></noscript>
+</head>
+<body onload="redirectContents();">
+		<div id="overview">
+			<h1>The Massivision SDK API Reference</h1>
+			<div id="main">
+
+Please select a package or type to view code documentation and class diagrams.
+
+			</div>
+		</div>
+	</body>
+</html>

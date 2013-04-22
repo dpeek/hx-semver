@@ -1,0 +1,15 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/tr/html4/frameset.dtd">
+<html>
+	<head>
+		<title>::raw config.title::</title>
+	</head>
+	<!-- <frameset bordercolor="#000000" rows="65px,*" border="0" framespacing="0" frameborder="0"> -->
+		<!-- <frame name="headerFrame" src="images/header::raw config.htmlFileExtension::" title="Massivision API Docs" scrolling="no"/> -->
+		<frameset cols="260px,*" bordercolor="#CCCCCC" border="1" framespacing="0" frameborder="1">
+			<frame name="packageListFrame" src="all_packages::raw config.htmlFileExtension::" title="All Packages"/>
+			<frame name="classFrame" src="overview::raw config.htmlFileExtension::" title="Package, class and interface descriptions" scrolling="yes"/>
+			<!-- <frame name="classFrame" src="types/m/data/Collection::raw config.htmlFileExtension::" title="Package, class and interface descriptions" scrolling="yes"/> -->
+		</frameset>
+	<!-- </frameset> -->
+</html>
+

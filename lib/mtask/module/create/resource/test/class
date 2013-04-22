@@ -1,0 +1,12 @@
+${licenseBlock}${packageBlock}import massive.munit.Assert;
+
+${docBlock}class ${typeName}
+{
+	public function new() {}
+
+	@Test
+	public function passes_test():Void
+	{
+		Assert.isTrue(true);
+	}
+}

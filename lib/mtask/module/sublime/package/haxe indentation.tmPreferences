@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>haxe indentation</string>
+	<key>scope</key>
+	<string>source.hx</string>
+	<key>settings</key>
+	<dict>
+		<key>decreaseIndentPattern</key>
+		<string>^(.*\*/)?\s*\}([^}{"']*\{)?[;\s]*(//.*|/\*.*\*/\s*)?$|^\s*(public|dynamic):\s*$</string>
+		<key>increaseIndentPattern</key>
+		<string>^.*\{[^}"']*$|^\s*(public|dynamic):\s*$</string>
+		<key>indentNextLinePattern</key>
+		<string>^(?!(.*[};:])?\s*(//|/\*.*\*/\s*$)).*[^\s;:{}]\s*$</string>
+	</dict>
+	<key>uuid</key>
+	<string>27BBEF20-AD05-4D77-B172-1E81ADE8393B</string>
+</dict>
+</plist>
