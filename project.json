@@ -7,8 +7,7 @@
 		"devDependencies":
 		{
 			"munit":"feature/haxe-3",
-			"mtask":"haxe3",
-			"msys":"haxe3"
+			"mtask":"haxe3"
 		}
 	}
 }
