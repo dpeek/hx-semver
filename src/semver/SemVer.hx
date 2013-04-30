@@ -133,7 +133,11 @@ class SemVer
 	static function replaceXRange(version:String):String
 	{
 		version = version.trim();
+		#if haxe3
 		version = parseXRange.map(version, function(ereg:EReg):String
+		#else
+		version = parseXRange.customReplace(version, function(ereg:EReg):String
+		#end
 		{
 			var v = ereg.matched(0);
 			var gtlt = ereg.matched(1);
@@ -186,7 +190,11 @@ class SemVer
 	static function replaceSpermies(version:String):String
 	{
 		version = version.trim();
+		#if haxe3
 		version = parseSpermy.map(version, function(ereg:EReg):String
+		#else
+		version = parseSpermy.customReplace(version, function(ereg:EReg):String
+		#end
 		{
 			var v = ereg.matched(0);
 			var gtlt = ereg.matched(1);
@@ -322,7 +330,7 @@ class SemVer
 			case "!=": neq(v1, v2);
 			case "===": v1 == v2;
 			case "!==": v1 != v2;
-			case _: false;
+			default: false;
 		}
 	}
 

@@ -1,5 +1,11 @@
 {
+	"msignal":"1.2.0",
+	"mlib":"2.0.0",
+	"mcover":"2.0.1",
 	"msys":"b9958df",
+	"mconsole":"182547e",
+	"mcore":"9c89aca",
 	"munit":"25bdcdc",
-	"mtask":"7dec197"
+	"mtask":"6f38f81",
+	"hamcrest":"1.2.0"
 }

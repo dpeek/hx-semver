@@ -4,7 +4,7 @@
 		"name":"hx-semver",
 		"version":"1.0.0",
 		"id":"semver",
-		"dependencies":
+		"devDependencies":
 		{
 			"munit":"feature/haxe-3",
 			"mtask":"haxe3",
