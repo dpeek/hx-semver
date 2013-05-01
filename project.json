@@ -6,7 +6,8 @@
 		"id":"semver",
 		"devDependencies":
 		{
-			"munit":"feature/haxe-3",
+			"munit":"2.x",
+			"mcover":"2.x",
 			"mtask":"haxe3"
 		}
 	}
