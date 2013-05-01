@@ -1,7 +1,7 @@
 <project name="semver" url="http://github.com/davidpeek/hx-semver" license="MIT">
-	<user name="ninjascript"/>
+	<user name="massive"/>
 	<description><![CDATA[A Haxe port of the Node SemVer library.]]></description>
-	<version name="1.0.0"><![CDATA[Initial release.]]></version>
+	<version name="1.1.0"><![CDATA[Initial release.]]></version>
 	<tag v="cross"/>
 	<tag v="utility"/>
 </project>
