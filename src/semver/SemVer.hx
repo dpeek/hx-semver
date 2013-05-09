@@ -256,7 +256,7 @@ class SemVer
 			for (r in set)
 			{
 				var gtlt = r.charAt(0) == ">"
-						 ? gt
+						 ? greaterThan
 						 : r.charAt(0) == "<" ? lt
 						 : null;
 				var eq = r.charAt((gtlt == null ? 0 : 1)) == "=";
@@ -284,7 +284,7 @@ class SemVer
 	// return v1 > v2 ? 1 : -1
 	static function compare(v1:String, v2:String):Int
 	{
-		var g = gt(v1, v2);
+		var g = greaterThan(v1, v2);
 		return g == null ? 0 : (g ? 1 : -1);
 	}
 
@@ -310,12 +310,12 @@ class SemVer
 	
 	public static function eq(v1:String, v2:String)
 	{
-		return gt(v1, v2) == null;
+		return greaterThan(v1, v2) == null;
 	}
 
 	public static function neq(v1:String, v2:String)
 	{
-		return gt(v1, v2) != null;
+		return greaterThan(v1, v2) != null;
 	}
 
 	public static function cmp(v1:String, c:String, v2:String):Bool
@@ -340,6 +340,11 @@ class SemVer
 	}
 
 	public static function gt(version1:String, version2:String):Null<Bool>
+	{
+		return greaterThan(version1, version2) == true;
+	}
+
+	static function greaterThan(version1:String, version2:String):Null<Bool>
 	{
 		var v1 = parseString(version1);
 		var v2 = parseString(version2);

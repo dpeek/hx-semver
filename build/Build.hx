@@ -9,9 +9,9 @@ class Build extends mtask.core.BuildBase
 
 	@target function haxelib(t:HaxeLib)
 	{
-		t.url = "http://github.com/davidpeek/hx-semver";
+		t.url = "http://github.com/dpeek/hx-semver";
 		t.description = "A Haxe port of the Node SemVer library.";
-		t.versionDescription = "Initial release.";
+		t.versionDescription = "Fix to less than comparison.";
 
 		t.addTag("cross");
 		t.addTag("utility");

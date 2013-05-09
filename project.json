@@ -1,8 +1,12 @@
 {
+	"haxelib":
+	{
+		"user":"ninjascript"
+	},
 	"project":
 	{
 		"name":"hx-semver",
-		"version":"1.1.0",
+		"version":"1.1.1",
 		"id":"semver",
 		"devDependencies":
 		{
