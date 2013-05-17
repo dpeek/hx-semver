@@ -5,10 +5,13 @@ using Lambda;
 using semver.SemVer.StringHelper;
 
 /**
-See http://semver.org/
-This implementation is a *hair* less strict in that it allows v1.2.3 things, 
-and also tags that don't begin with a char.
-*/
+	A utility class for working with semantic versioning.
+	
+	This implementation is a *hair* less strict in that it allows v1.2.3 things, 
+	and also tags that don't begin with a char.
+
+	See http://semver.org/
+**/
 class SemVer
 {
 	static var semver = 
